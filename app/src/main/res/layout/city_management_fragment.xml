@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff4f5f6"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/emptyView"
+        />
+    <include layout="@layout/city_management_tab_edit"
+        android:id="@+id/city_management_tab_edit"
+        />
+
+    <include layout="@layout/city_management_tab_normal"
+        android:id="@+id/city_management_tab_normal"
+        />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cities_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/emptyView"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:backgroundTint="#ff3faad8"
+        app:elevation="0dp"
+        />
+
+</RelativeLayout>

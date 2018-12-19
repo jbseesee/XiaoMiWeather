@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="210dp"
+    android:orientation="vertical"
+    >
+
+
+    <com.example.jb.test4.widgets.SunView
+        android:id="@+id/sunView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sunView_windDirect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="北风"
+                android:textColor="#ff000000"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/sunView_windLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sunView_windDirect"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="1级"
+                android:textColor="#ff000000"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="40dp"
+            android:background="#ffbababa">
+        </View>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/sunView_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="相对湿度"
+                android:textSize="13sp"
+                android:textColor="#ff000000"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/sunView_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="89%"
+                android:textSize="13sp"
+                android:textColor="#ff000000"
+                android:layout_below="@+id/sunView_h"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="40dp"
+            android:background="#ffbababa">
+        </View>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/sunView_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="体感温度"
+                android:textSize="13sp"
+                android:textColor="#ff000000"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/sunView_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26.7℃"
+                android:textSize="13sp"
+                android:textColor="#ff000000"
+                android:layout_below="@+id/sunView_t"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="40dp"
+            android:background="#ffbababa">
+        </View>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/sunView_p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="气压"
+                android:textSize="13sp"
+                android:textColor="#ff000000"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/sunView_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1007.0mb"
+                android:textSize="13sp"
+                android:textColor="#ff000000"
+                android:layout_below="@+id/sunView_p"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#ffefefef">
+    </View>
+
+</LinearLayout>

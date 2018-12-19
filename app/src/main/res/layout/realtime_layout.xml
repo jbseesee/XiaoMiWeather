@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="310dp"
+    android:id="@+id/realtime_layout"
+    >
+    <TextView
+        android:id="@+id/realtime_tm_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:textStyle="italic"
+        android:textSize="60sp"
+        android:text="24℃"
+        android:textColor="#ffffffff"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        />
+    <TextView
+        android:id="@+id/location_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="17sp"
+        android:textColor="#ffffffff"
+        android:text="金平区  中山路"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/realtime_tm_tv"
+        />
+    <TextView
+        android:id="@+id/skycon_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:textColor="#ffffffff"
+        android:text="多云"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/location_tv"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        >
+        <ImageView
+            android:id="@+id/reatime_aqi_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/realtime_aqi_skull"
+            android:padding="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/reatime_aqi_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="17sp"
+            android:textColor="#ffffffff"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/reatime_aqi_iv"
+            />
+
+        <View
+            android:id="@+id/line_middle"
+            android:layout_width="2dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="#ffffffff"
+            android:layout_centerInParent="true"
+          />
+        <ImageView
+            android:id="@+id/reatime_rainfall_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/minute_rain_fall_normal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/line_middle"
+            />
+        <TextView
+            android:id="@+id/reatime_rainfall_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="17sp"
+            android:textColor="#ffffffff"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_gravity="center_vertical"
+            android:layout_toRightOf="@+id/reatime_rainfall_iv"
+            />
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

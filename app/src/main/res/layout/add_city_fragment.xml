@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff4f5f6"
+    >
+
+    <include layout="@layout/add_city_tab_layout"
+        android:id="@+id/add_city_ev"
+        />
+
+    <TextView
+        android:id="@+id/add_city_popularcity_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="热门城市"
+        android:textSize="14sp"
+        android:textColor="#ff000000"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/add_city_ev"
+        />
+
+
+    <com.example.jb.test4.widgets.MyLayout
+        android:id="@+id/popularCities_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/add_city_popularcity_tv"
+        >
+
+    </com.example.jb.test4.widgets.MyLayout>
+
+    <ListView
+        android:id="@+id/add_city_searchresult_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_city_ev"
+        >
+
+    </ListView>
+
+</RelativeLayout>

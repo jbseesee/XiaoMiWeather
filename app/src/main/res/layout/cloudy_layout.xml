@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/cloudy_violet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_cloudy_violet" />
+
+    <ImageView
+        android:id="@+id/bg_cloudy_first_cloud"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_first_cloud"
+        />
+    <ImageView
+        android:id="@+id/bg_cloudy_second_cloud"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="180dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_second_cloud"
+        />
+    <ImageView
+        android:id="@+id/bg_cloudy_third_cloud"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="220dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:layout_marginLeft="150dp"
+        android:src="@drawable/bg_cloudy_third_cloud"
+        />
+    <ImageView
+        android:id="@+id/bg_cloudy_fourth_cloud"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="260dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_fourth_cloud"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_cloudy_left_violet"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_cloudy_right_violet"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="80dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_first_rod_violet" />
+
+    <ImageView
+        android:id="@+id/bg_cloudy_windmill_first_head_violet"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="75dp"
+        android:layout_marginBottom="150dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_first_head_violet" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="100dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_second_rod_violet" />
+
+    <ImageView
+        android:id="@+id/bg_cloudy_windmill_second_head_violet"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="125dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_second_head_violet" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="90dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_third_rod_violet" />
+
+    <ImageView
+        android:id="@+id/bg_cloudy_windmill_third_head_violet"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="57dp"
+        android:layout_marginBottom="115dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_third_head_violet" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="90dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_fourth_rod_violet" />
+
+    <ImageView
+        android:id="@+id/bg_cloudy_windmill_fourth_head_violet"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginBottom="125dp"
+        android:layout_alignBottom="@+id/cloudy_violet"
+        android:src="@drawable/bg_cloudy_windmill_fourth_head_violet" />
+
+</RelativeLayout>

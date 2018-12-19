@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按钮的圆角弧度 -->
+    <corners android:radius="2dp" />
+    <!-- 按钮的填充色 -->
+    <solid android:color="#ffffffff" />
+    <!-- 按钮的边距 -->
+    <stroke
+        android:width="0.1dp"
+        android:color="#ffd9d9d9"/>
+    <!-- 按钮内边距 -->
+    <padding
+        android:bottom="10dp"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp"
+        />
+
+</shape>

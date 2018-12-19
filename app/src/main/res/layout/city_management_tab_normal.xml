@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="#ff3faad8"
+    android:id="@+id/cityManagementTab_normal"
+    >
+
+    <ImageView
+        android:id="@+id/cityManagementBack_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/action_bar_back_light"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+
+        />
+
+    <TextView
+        android:id="@+id/cityManagementText_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="城市管理"
+        android:textColor="#ffffffff"
+        android:textSize="15sp"
+        android:layout_toRightOf="@+id/cityManagementBack_iv"
+        android:layout_alignParentBottom="true"
+
+        />
+
+    <ImageView
+        android:id="@+id/cityManagementEdit_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/edit_normal_light"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+
+
+        />
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/forecast_layout"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:orientation="vertical"
+        android:paddingTop="0dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:background="#ffffffff"
+        >
+
+    </LinearLayout>
+    <View
+        android:id="@+id/line_view"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#ff6a6a6a"
+        android:layout_below="@+id/container_layout"
+        />
+    <Button
+        android:id="@+id/fourDayForecast_bt"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/forecastbutton_bg"
+        android:text=""
+        android:textSize="13sp"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        />
+    <View
+        android:id="@+id/linebig_view"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#ffefefef"
+
+        />
+
+
+</LinearLayout>

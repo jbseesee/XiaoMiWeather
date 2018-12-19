@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.jb.test4.widgets.MyScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/weather_background"
+                android:layout_width="match_parent"
+                android:layout_height="350dp" />
+
+            <include
+                android:id="@+id/realtime_firest"
+                layout="@layout/reatime_first_layout"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_alignBottom="@+id/weather_background">
+
+            </include>
+
+            <include
+                android:id="@+id/forecast_second"
+                layout="@layout/threedayforecast_second_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/realtime_firest"
+
+                >
+
+            </include>
+
+            <include
+                android:id="@+id/chat"
+                layout="@layout/chat_view_layout"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_below="@+id/forecast_second">
+
+            </include>
+
+            <include
+                android:id="@+id/sunview"
+                layout="@layout/sun_view_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chat">
+
+            </include>
+
+            <LinearLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/realtime_firest"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/refresh_iv"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/refresh_cloud_shape_0" />
+
+                <TextView
+                    android:id="@+id/refresh_tx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="正在刷新"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </com.example.jb.test4.widgets.MyScrollView>
+
+
+    <include layout="@layout/top_tab_layout"/>
+
+
+</RelativeLayout>

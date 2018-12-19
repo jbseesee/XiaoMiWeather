@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/sunny_violet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_sunny_night" />
+
+    <ImageView
+        android:id="@+id/sunny_left"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_sunny_left_night"
+        android:layout_alignBottom="@+id/sunny_violet"
+        />
+
+    <ImageView
+        android:id="@+id/sunny_right"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_sunny_right_night"
+        android:layout_alignBottom="@+id/sunny_violet"
+        />
+
+    <com.example.jb.test4.widgets.TreeView
+        android:id="@+id/treeview"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_alignBottom="@+id/sunny_violet"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="-20dp"
+        />
+    
+    <com.example.jb.test4.widgets.RainView
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:background="@drawable/popular_cities_button"
+    android:id="@+id/popularCity_item_layout"
+    android:layout_margin="5dp"
+    >
+
+    <TextView
+        android:id="@+id/popularCity_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:text="定位"
+        android:textColor="#ff000000"
+        android:gravity="center_vertical"
+        android:layout_marginTop="-2dp"
+        />
+    <ImageView
+        android:id="@+id/popularCity_item_iv"
+        android:layout_width="10dp"
+        android:layout_height="15dp"
+        android:layout_toRightOf="@id/popularCity_item_tv"
+        android:src="@drawable/icon_location"
+        android:layout_marginLeft="3dp"
+        android:visibility="gone"
+        />
+
+
+
+</RelativeLayout>
