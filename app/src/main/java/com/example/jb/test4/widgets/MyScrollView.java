@@ -63,36 +63,6 @@ public class MyScrollView extends ScrollView {
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        boolean intercept = false;
-        int x = (int)ev.getX();
-        int y = (int) ev.getY();
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                super.onInterceptTouchEvent(ev);//必须在DOWN事件调用父方法，否则ScrollView无法滑动
-                intercept = false;
-                break;
-            case MotionEvent.ACTION_MOVE:
-                int detalX = x - lastX;
-                int detalY = y - lastY;
-                //如果滑动的竖直距离大于水平距离，拦截事件，不传给子
-                if (Math.abs(detalY) > Math.abs(detalX)) {
-                    intercept = true;
-                    break;
-                } else
-                    intercept = false;
-                    break;
-            case MotionEvent.ACTION_UP:
-                intercept = false;
-                break;
-        }
-
-        lastX = x;
-        lastY = y;
-        return intercept;
-
-    }
-    @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         int x = (int)ev.getX();
         int y = (int) ev.getY();
@@ -110,8 +80,9 @@ public class MyScrollView extends ScrollView {
             //垂直滑动请求父View不要拦截事件
             if (Math.abs(detalY) > Math.abs(detalX)) {
                 getParent().requestDisallowInterceptTouchEvent(true);
+
                 disT =scrollY>0?0:(disT+detalY);
-            //触摸点在ChatView位置父View不要拦截事件
+                //触摸点在ChatView位置父View不要拦截事件
             }else if (rawY > top && rawY < top + chatView.getHeight()){
                 getParent().requestDisallowInterceptTouchEvent(true);
             }else {
@@ -119,7 +90,6 @@ public class MyScrollView extends ScrollView {
             }
 
 
-            //disT += detalY;//累加Y值
             if (disT > maxDis) {
                 disT = (int) maxDis;//累加值的最大值
             }
@@ -150,6 +120,39 @@ public class MyScrollView extends ScrollView {
         dispatchLastX = x;
         dispatchLastY = y;
         return super.dispatchTouchEvent(ev);
+    }
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        boolean intercept = false;
+        int x = (int)ev.getX();
+        int y = (int) ev.getY();
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                super.onInterceptTouchEvent(ev);//必须在DOWN事件调用父方法，否则ScrollView无法滑动
+                intercept = false;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int detalX = x - lastX;
+                int detalY = y - lastY;
+                //如果滑动的竖直距离大于水平距离，拦截事件，不传给子
+                if (Math.abs(detalY) > Math.abs(detalX)) {
+                    intercept = true;
+                    
+                    break;
+                } else
+                    intercept = false;
+
+                    break;
+            case MotionEvent.ACTION_UP:
+                intercept = false;
+
+                break;
+        }
+
+        lastX = x;
+        lastY = y;
+        return intercept;
+
     }
 
     public void setChatView(View view){

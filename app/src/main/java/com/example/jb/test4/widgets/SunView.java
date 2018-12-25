@@ -113,7 +113,7 @@ public class SunView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         float angleP = (percentV * 80);
-        double angle = 50 + (percentV * 80);
+        float angle = 50 + (percentV * 80);
 
         pathLD.addArc(oval,-50,-80);
 
@@ -142,7 +142,7 @@ public class SunView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int width = MeasureSpec.getSize(widthMeasureSpec);//宽度为父view可用宽度
         int height = (int)Util.dpToPixelF(120);
 
         height = resolveSize(height,heightMeasureSpec);
@@ -150,12 +150,12 @@ public class SunView extends View {
         setMeasuredDimension(width,height);
     }
 
-    public float getX(double angle){
+    private float getX(double angle){
       float x = (- Util.dpToPixelF(230) * (float) Math.cos((Math.PI / 180) * angle)) + Util.dpToPixelF(180);
       return x;
     }
 
-    public float getY(double angle){
+    private float getY(double angle){
         float y = (-Util.dpToPixelF(230) * (float) Math.sin((Math.PI / 180) * angle)) + Util.dpToPixelF(45) + Util.dpToPixelF(230);
         return y;
     }

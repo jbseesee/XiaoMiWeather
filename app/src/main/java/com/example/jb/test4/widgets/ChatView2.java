@@ -13,6 +13,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -133,7 +134,7 @@ public class ChatView2 extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int width = MeasureSpec.getSize(widthMeasureSpec); // 宽度就是父view可用宽度。
         int height = (int) Util.dpToPixelF(270);
 
         height = resolveSize(height,heightMeasureSpec);
@@ -245,14 +246,14 @@ public class ChatView2 extends View {
         else if (leftLocationX <= 0 && rightLocationX <= measureWidth)//退出屏幕
             flag2 = 4;
         switch (flag2){
-            case 0: return (leftLocationXQ + rightLocationXQ) / 2;
+            case 0:
+            case 2:
+                return (leftLocationXQ + rightLocationXQ) / 2;
 
             case 1: if (measureWidth - leftLocationX <= minX)
                 return (leftLocationXQ +(leftLocationXQ + minX)) / 2;
             else
                 return (leftLocationXM + measureWidth) / 2;
-
-            case 2: return (leftLocationXQ + rightLocationXQ) / 2;
 
             case 3: return (measureWidth / 2 + disX);
 
@@ -260,10 +261,6 @@ public class ChatView2 extends View {
                 return rightLocationXM / 2;
             else
                 return (rightLocationXQ + rightLocationXQ - minX) / 2;
-
-
-
-
         }
 
         return 0;
@@ -292,7 +289,7 @@ public class ChatView2 extends View {
         polyLinePaint.setStyle(Paint.Style.STROKE);
         polyLinePaint.setColor(0xff34c7f2);
         polyLinePaint.setStrokeWidth(lineWidth2);
-        dottedPaint.setStyle(Paint.Style.STROKE);
+        dottedPaint.setStyle(Paint.Style.STROKE);//注意，style默认是FILL，而虚线效果必须是STROKE才能显示。
         dottedPaint.setStrokeWidth(lineWidth);
         dottedPaint.setColor(0xffb9b9b9);
         PathEffect effect = new DashPathEffect(new float[]{Util.dpToPixelF(5f), Util.dpToPixelF(5f)}, 0);//虚线effect
@@ -443,7 +440,10 @@ public class ChatView2 extends View {
                     getParent().requestDisallowInterceptTouchEvent(true);
                 } else
                     break;
+
+
             case MotionEvent.ACTION_UP:
+
                 break;
         }
 
