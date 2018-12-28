@@ -94,7 +94,8 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
     public void viewPagerPageChange(){
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
             @Override
             public void onPageScrollStateChanged(int state) {}
 
@@ -119,6 +120,7 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
                         }
                     }
                 }
+                Log.d("test","onPageSelected: " + position );
 
             }
         });
@@ -154,6 +156,7 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
                 circle.setImageResource(R.drawable.main_circleindicator_city);
             }
         }
+
         imageViews.add(circle);
         pageIndication.addView(circle, margin);
 
@@ -182,6 +185,7 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
     public void notifyDataSetChanged() {
         if (viewPagerAdapter!=null) {
             viewPagerAdapter.notifyDataSetChanged();
+
         }
     }
 
@@ -232,7 +236,6 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
                         presenter.deleteFragment(hasDeleteId);
                     }
                     notifyDataSetChanged();
-                    setCurrentItem(0);
                 }
 
                 if (resultCode == ActivityResultCodeUtil.TURN_TO) {
