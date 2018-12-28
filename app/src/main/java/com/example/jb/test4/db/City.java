@@ -20,7 +20,7 @@ public class City extends LitePalSupport {
     private String windDirect;
     private String windLevel;
     private String humidity;
-    private boolean isLocation;
+    private boolean isLocation = false;
 
     public long getId() {
         return id;

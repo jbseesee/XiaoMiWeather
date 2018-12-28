@@ -63,13 +63,13 @@ public class ActivityPresenter implements HomePageContract.ActivityPresenter {
         //逐个删除id对应的元素
         for (long id: hasDeleteId){
             for (int i = 0; i < fragments.size(); i++){
-                if (fragments.get(i).getCityId()==id){
+                if (fragments.get(i).getArguments().getLong("id")==id){
                     int position = fragments.indexOf(fragments.get(i));
                     homePresenters.remove(position);
+                    Log.d("test","该位置地区" + position + cityList.get(position).getCity() +  "天气信息已被移除!");
                     cityList.remove(position);
                     mView.removePointOfPageIndication(position);
                     fragments.remove(position);
-                    Log.d("test","该位置地区" + position + "天气信息已被移除!");
                     break;
                 }
             }
