@@ -107,10 +107,11 @@ public class CityManagementAdapter extends RecyclerView.Adapter<CityManagementAd
         });
 
         if (!city.isLocation()) {
-            holder.location_tv.setVisibility(View.GONE);
+            holder.location_tv.setVisibility(View.INVISIBLE);
             holder.street_tv.setText(city.getDistrict());
             holder.district_tv.setText(city.getDistrict() + "," + city.getCity());
         } else {
+            holder.location_tv.setVisibility(View.VISIBLE);
             holder.street_tv.setText(city.getStreet());
             holder.district_tv.setText(city.getDistrict() + "," + city.getCity());
         }
