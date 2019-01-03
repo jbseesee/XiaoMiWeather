@@ -43,11 +43,11 @@ public class AddCityActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-
+        super.onBackPressed();
         if (LitePal.count(City.class)==0){
             setResult(ActivityResultCodeUtil.FINISH,new Intent(AddCityActivity.this, HomePageActivity.class));
         }
-        super.onBackPressed();
+
 
     }
 

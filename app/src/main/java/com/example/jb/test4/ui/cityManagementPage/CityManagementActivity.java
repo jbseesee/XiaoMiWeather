@@ -12,6 +12,7 @@ import com.example.jb.test4.util.ActivityResultCodeUtil;
 
 public class CityManagementActivity extends BaseActivity{
     private CityManagementFragment fragment;
+    private Log[] hasDeleteId;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_city_management;
@@ -30,14 +31,13 @@ public class CityManagementActivity extends BaseActivity{
         CityManagmentPresenter presenter = new CityManagmentPresenter(this, fragment);
     }
 
+
     @Override
     public void onBackPressed() {
         Intent intent = new Intent();
         intent.putExtra("hasDeleteId",fragment.getHasDeleteId());
         setResult(ActivityResultCodeUtil.DELETE,intent);
         super.onBackPressed();
-
-
     }
 
     @Override

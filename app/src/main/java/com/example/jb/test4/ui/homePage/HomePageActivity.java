@@ -98,30 +98,12 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
             }
             @Override
             public void onPageScrollStateChanged(int state) {}
-
             @Override
             public void onPageSelected(int position) {
                 for (int i = 0; i < imageViews.size();i++){
-                    City city = presenter.getCity(i);
-                    ImageView circle = imageViews.get(i);
-
                     //导航小圆点选中与非选中时加载的图片
-                    if (i == position){
-                        if (city.isLocation()){
-                            circle.setImageResource(R.drawable.main_circleindicator_located_city_s);
-                        }else {
-                            circle.setImageResource(R.drawable.main_circleindicator_city_s);
-                        }
-                    }else {
-                        if (city.isLocation()){
-                            circle.setImageResource(R.drawable.main_circleindicator_located_city);
-                        }else {
-                            circle.setImageResource(R.drawable.main_circleindicator_city);
-                        }
-                    }
+                    selectCircleIndicatorResource(i);
                 }
-                Log.d("test","onPageSelected: " + position );
-
             }
         });
     }
@@ -143,13 +125,26 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
         }
         margin.setMargins(margins, margins, margins, margins);
 
-        if (position == 0) {//默认选中第一个
+        imageViews.add(circle);
+        selectCircleIndicatorResource(position);
+        pageIndication.addView(circle, margin);
+
+    }
+    private void selectCircleIndicatorResource(int position){
+        if (imageViews.isEmpty()){
+            return;
+        }
+        int currentIndex = viewPager.getCurrentItem();
+        ImageView circle = imageViews.get(position);
+        City city = presenter.getCity(position);
+
+        if (position==currentIndex) {
             if (city.isLocation()) {
                 circle.setImageResource(R.drawable.main_circleindicator_located_city_s);
             } else {
                 circle.setImageResource(R.drawable.main_circleindicator_city_s);
             }
-        } else {
+        }else {
             if (city.isLocation()) {
                 circle.setImageResource(R.drawable.main_circleindicator_located_city);
             } else {
@@ -157,10 +152,10 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
             }
         }
 
-        imageViews.add(circle);
-        pageIndication.addView(circle, margin);
 
     }
+
+
 
 
     @Override
@@ -236,6 +231,7 @@ public class HomePageActivity extends BaseActivity implements HomePageContract.A
                         presenter.deleteFragment(hasDeleteId);
                     }
                     notifyDataSetChanged();
+                    selectCircleIndicatorResource(0);
                 }
 
                 if (resultCode == ActivityResultCodeUtil.TURN_TO) {

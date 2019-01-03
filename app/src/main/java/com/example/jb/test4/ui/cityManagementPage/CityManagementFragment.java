@@ -182,7 +182,9 @@ public class CityManagementFragment extends BaseFragment implements CityManagmen
         }
         cityManageList.clear();
         cityManageList.addAll(cities);
-        adapter = new CityManagementAdapter(cityManageList);
+        if (adapter==null) {
+            adapter = new CityManagementAdapter(cityManageList);
+        }
         cityList.setAdapter(adapter);
         adapter.setOnItemClickListener(new CityManagementAdapter.OnItemClickListener() {
             @Override
