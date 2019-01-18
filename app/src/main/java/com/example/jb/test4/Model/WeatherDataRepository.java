@@ -78,7 +78,7 @@ public class WeatherDataRepository implements WeatherDataSoucre<City> {
                             Schedulers.io().createWorker().schedule(new Runnable() {
                                 @Override
                                 public void run() {
-                                    b(weatherData, type,cityInfo);
+                                    saveDb(weatherData, type);
                                 }
                             });
                             return new HandleJson().handleData(weatherData);
@@ -107,18 +107,16 @@ public class WeatherDataRepository implements WeatherDataSoucre<City> {
                         @Override
                         public HomeViewData apply(WeatherData weatherData) {
                             if (weatherData!=null) {
-                                cityInfo.setLocation(true);
                                 cityInfo.setStreet(city.getStreet());
                                 cityInfo.setDistrict(city.getDistrict());
-                                cityInfo.setCity(city.getCity());
-                                cityInfo.setProvince(city.getProvince());
+                                cityInfo.setCity(Util.handleString(city.getCity()));
+                                cityInfo.setProvince(Util.handleString(city.getProvince()));
                                 cityInfo.setLocation(city.getLocation());
-                                Log.d("test","repository:map" + cityInfo.getCity());
                                 weatherData.setCityInfo(cityInfo);
                                 Schedulers.io().createWorker().schedule(new Runnable() {
                                     @Override
                                     public void run() {
-                                        b(weatherData, id,cityInfo);
+                                        saveDb(weatherData, id);
                                     }
                                 });
                                 return new HandleJson().handleData(weatherData);
@@ -145,7 +143,7 @@ public class WeatherDataRepository implements WeatherDataSoucre<City> {
                             Schedulers.io().createWorker().schedule(new Runnable() {
                                 @Override
                                 public void run() {
-                                    b(weatherData, LocateType.ADD,cityInfo);
+                                    saveDb(weatherData, LocateType.ADD);
                                 }
                             });
                             return new HandleJson().handleData(weatherData);
@@ -226,7 +224,8 @@ public class WeatherDataRepository implements WeatherDataSoucre<City> {
     }
 
 
-    void b(WeatherData weatherData,long id,CityInfo cityInfo){
+    void saveDb(WeatherData weatherData,long id){
+        CityInfo cityInfo = weatherData.getCityInfo();
         Realtime realtime = weatherData.getRealtime();
         Forecast forecast = weatherData.getForecast();
         int temperture = (int) (realtime.getResult().getTemperature() + 0.5);
@@ -241,18 +240,21 @@ public class WeatherDataRepository implements WeatherDataSoucre<City> {
         long updateTime = realtime.getServer_time();
 
         City city;
+        long cityId = id;
         if (id == -1) {
             city = new City();
             city.save();
+            cityId = city.getId();
+        }else {
+            city = LitePal.find(City.class,cityId);
+        }
+        if(cityInfo.isLocation() || id == -1){
             city.setLocation(cityInfo.getLocation());
             city.setStreet(cityInfo.getStreet());
             city.setDistrict(cityInfo.getDistrict());
             city.setCity(cityInfo.getCity());
             city.setProvince(cityInfo.getProvince());
             city.setLocation(cityInfo.isLocation());
-            id = city.getId();
-        }else {
-            city = LitePal.find(City.class,id);
         }
 
         city.setTemperture(temperture);
@@ -264,8 +266,12 @@ public class WeatherDataRepository implements WeatherDataSoucre<City> {
         city.setWindLevel(windLevel);
         city.setHumidity(humidity);
         city.setUpdateTime(updateTime);
-        city.update(id);
+        city.update(cityId);
     }
+
+
+
+
 
 }
 class LocateType{

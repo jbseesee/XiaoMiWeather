@@ -43,10 +43,11 @@ public class AddCityActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        //必须在super前调用，否则会还没来得及调用下面的代码就出栈了；
         if (LitePal.count(City.class)==0){
             setResult(ActivityResultCodeUtil.FINISH,new Intent(AddCityActivity.this, HomePageActivity.class));
         }
+        super.onBackPressed();
 
 
     }
